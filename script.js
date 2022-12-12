@@ -10,7 +10,7 @@ sendbutton.addEventListener('click', () => {
   arr.push(output)
   console.log(arr);
   inputField.value = ('');
-  item.textContent = arr.join(' '); 
+  
   
   // convert the arr to JSON OBJ
   let jsonArr = JSON.stringify(arr);
@@ -22,16 +22,14 @@ sendbutton.addEventListener('click', () => {
  let retriveData = window.localStorage.getItem("arr", storedData)
  let jsObj = JSON.parse(retriveData)
  console.log(jsObj);
+
+ // displays the most recent book only
+ for(let i in jsObj) {
+  item.textContent = jsObj[i];
+ }
  
-  // Display the saved book title in a h3 tag
-  
-
-  
-
-
-
-
 })
+
 
 
 
